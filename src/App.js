@@ -1,6 +1,8 @@
 import React from 'react';
 
-import TestComponent from './TestComponent';
+import FunctionComponent from './FunctionComponent';
+import ClassComponent from './ClassComponent';
+import StateClassComponent from './StateClassComponent';
 
 const App = () => {
   const users = [
@@ -13,9 +15,9 @@ const App = () => {
   //const users = fetch('/api/user');
 
   const componentes = [
-    <TestComponent user='Juanmi' />,
-    <TestComponent user='Isma' />,
-    <TestComponent user='Erik' />,
+    <FunctionComponent user='Juanmi' />,
+    <FunctionComponent user='Isma' />,
+    <FunctionComponent user='Erik' />,
   ];
 
   return (
@@ -25,8 +27,12 @@ const App = () => {
       {
         users
           .filter(u => u === 'Juanmi')
-          .map(u => <TestComponent user={u} />)
+          .map(u => <FunctionComponent user={u} />)
       }
+      <div>--------------------------------</div>
+      <ClassComponent user={'Erik'} />
+      <div>--------------------------------</div>
+      <StateClassComponent />
     </div>
   );
 }
